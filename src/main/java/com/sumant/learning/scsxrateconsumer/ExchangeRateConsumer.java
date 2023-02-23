@@ -27,7 +27,9 @@ public class ExchangeRateConsumer {
                     .forEach(exchangeRateRecord -> {
                         String rateRecordId = exchangeRateRecord.getFromCurrency() + "-" + exchangeRateRecord.getToCurrency();
                         exchangeRateRecord.setId(rateRecordId);
+                        log.info("Going to save record: " + exchangeRateRecord);
                         exchangeRateRepository.save(exchangeRateRecord);
+                        log.info("Saved record: " + exchangeRateRecord);
                     });
         };
     }
