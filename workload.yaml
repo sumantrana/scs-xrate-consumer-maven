@@ -21,6 +21,11 @@ spec:
         apiVersion: services.apps.tanzu.vmware.com/v1alpha1
         kind: ClassClaim
         name: rmq-1
+    - name: db
+      ref:
+        apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+        kind: ResourceClaim
+        name: postgres-claim
   source:
     git:
       url: https://github.com/sumantrana/scs-xrate-consumer-maven.git
